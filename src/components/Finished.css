@@ -1,0 +1,25 @@
+.cont-finished{
+    text-align: center;
+}
+.cont-finished img{
+    width: 150px;
+    @media (min-width: 700px) {
+      width: 250px;
+    }
+}
+.cont-finished input{
+    margin: 10px 0;
+    font-weight: bold;
+    background-color: aliceblue;
+}
+.cont-finished input:hover{
+    background-color:rgb(107, 107, 202) ;
+    color: white;
+}
+.welldone{
+    color: rgb(214, 214, 73);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
