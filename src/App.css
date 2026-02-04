@@ -5,8 +5,8 @@
 . Layout general*/
 
 *{
-   /*font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif*/
-   font-family: 'Open Sans', 'Helvetica Neue', sans-serif
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
 }
 
 .container{
@@ -16,7 +16,7 @@
 }
 body{
    margin: auto;
-   background-color: rgb(250, 250, 229);
+   background-color: rgb(223, 238, 250);
 }
 .cont-components{
    margin: auto;
@@ -36,7 +36,9 @@ body{
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: aliceblue;
+   color: aliceblue;
+   background-color: rgb(23, 43, 98);
+   margin-bottom: 10px;
 }
 .cont-title img{
    width: 40px;
