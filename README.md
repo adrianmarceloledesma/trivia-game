@@ -36,7 +36,7 @@ Questions are fetched from a public trivia API and the game includes a countdown
 ## Quick Start
 
 ```bash
-git clone https://github.com/your-username/trivia-game
+git clone https://github.com/adrianmarceloledesma/trivia-game
 cd trivia-game
 npm install
 npm run dev
@@ -48,8 +48,9 @@ https://trivia-game2026.vercel.app/
 
 ## Preview
 
+## Project Structure
+
 ```
-Project Structure
 src/
 ├─ components/
 │  ├─ QuestionCard.tsx

@@ -16,6 +16,7 @@
 }
 body{
    margin: auto;
+   background-color: rgb(250, 250, 229);
 }
 .cont-components{
    margin: auto;
@@ -31,8 +32,6 @@ body{
     }
     
 }
-
-
 .cont-title{
    display: flex;
    justify-content: center;
@@ -50,11 +49,18 @@ h1{
 input, select{
    width:95%;
    padding: 10px;
-   border: 1px solid;
-   border-radius: 3px;
+   border: 2px solid rgb(146, 204, 255);
+   border-radius: 8px;
    font-size: 18px;
    cursor: pointer;
    overflow-wrap: break-word;
    word-wrap: break-word;
+   transition: all 0.5s ease;
 
+}
+
+/* Efecto al hacer clic (focus) */
+input:focus{
+  transform: scale(1.1);
+  
 }

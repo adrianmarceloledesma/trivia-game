@@ -1,10 +1,11 @@
 .cont-questionCard .cont-time-index-points{
     display: flex;
     justify-content: space-between;
-    
+    border-bottom: 2px solid rgb(146, 204, 255);
 }
 .cont-title-options{
    text-align: center;
+   
 }
 .cont-options{
     display: flex;
@@ -18,12 +19,14 @@
 }
 
 .cont-options input:hover{
-    border: rgb(107, 107, 202) 2px solid;
+    border: rgb(0, 133, 249) 2px solid;
 }
 
 .option-correct{
     color: green;
+    border-color: green;
 }
 .option-incorrect{
     color: red;
+    border-color: red;
 }

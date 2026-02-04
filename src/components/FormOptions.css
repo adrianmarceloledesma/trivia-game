@@ -20,9 +20,12 @@
     background-color: rgb(107, 107, 202);
     font-weight: bold;
     color: white;
+    border:rgb(107, 107, 202) 2px solid;
 }
 
 .cont-formOptions input:hover{
-background-color: rgba(107, 107, 202, 0.758);}
+    background-color: rgb(120, 120, 194);
+}
+
 
 
