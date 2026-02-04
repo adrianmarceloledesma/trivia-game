@@ -20,8 +20,8 @@ export default function QuestionCard({e,index,adaptedAnswers,handleAnswer,userAn
   return (
     <div className="cont-questionCard">
       <div className="cont-time-index-points">
-        <p>Time: <strong>{time}</strong></p>
-        <p><strong>{index + 1}</strong> of 10</p>
+        <p>Time: <strong className="time">{time}</strong></p>
+        <p><strong>{index + 1}</strong> of <strong>10</strong></p>
         <p>Score: <strong>{points}</strong></p>
       </div>
 

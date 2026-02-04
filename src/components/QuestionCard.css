@@ -7,6 +7,13 @@
    text-align: center;
    
 }
+.cont-questionCard .cont-time-index-points .time{
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: aliceblue;
+    border: 1px solid;
+    
+}
 .cont-options{
     display: flex;
     flex-direction: column;
