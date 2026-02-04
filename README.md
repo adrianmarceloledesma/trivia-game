@@ -40,12 +40,15 @@ git clone https://github.com/your-username/trivia-game
 cd trivia-game
 npm install
 npm run dev
-Live Demo
-👉 https://your-trivia-game.netlify.app
+```
 
-Preview
+## Live Demo
 
+https://trivia-game2026.vercel.app/
 
+## Preview
+
+```
 Project Structure
 src/
 ├─ components/
