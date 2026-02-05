@@ -62,7 +62,6 @@ input, select{
 }
 
 /* Efecto al hacer clic (focus) */
-input:focus{
+input:focus, input:active {
   transform: scale(1.1);
-  
 }

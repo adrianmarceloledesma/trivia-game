@@ -44,7 +44,7 @@ npm run dev
 
 ## Live Demo
 
-https://trivia-game2026.vercel.app/
+https://trivia-game2026-kohl.vercel.app/
 
 ## Preview
 
