@@ -7,6 +7,8 @@ import FormOptions from "./components/FormOptions";
 import fetchTrivia from "./hooks/fetchTrivia";
 import Finished from "./components/Finished";
 import iconTitle from './icon-title.png'
+import iconMenu from './images/menu-icon.png'
+import iconX from './images/x.png'
 
 function App() {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -14,7 +16,7 @@ function App() {
   const [initiateTimer, setInitiateTimer] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // to go to the next question
   const [changeSettings, setChangeSettings] = useState(false);
-
+  const [showMenu, setShowMenu] = useState(false);
   const finished = currentQuestionIndex >= 10 ? true : false;
 
   //mix answers
@@ -54,7 +56,7 @@ function App() {
       setPoints(0);
       setUserAnswers([]);
       setInitiateTimer(true);
-      setTime(10);
+      setTime(15);
       setChangeSettings(false);
       
     } catch (error) {
@@ -90,7 +92,7 @@ function App() {
 
       setTimeout(() => {
         setCurrentQuestionIndex((prev) => prev + 1);
-        setTime(10);
+        setTime(15);
         setInitiateTimer(true);
       }, 2000);
 
@@ -99,7 +101,7 @@ function App() {
   };
 
   //timer
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(15);
   useEffect(() => {
     if (time > 0 && initiateTimer) {
       const timerId = setTimeout(() => {
@@ -164,16 +166,42 @@ function App() {
   }
 
 
+
+
+
   return (
     <div className="container">
-      <div className="cont-title">
-        <img src={iconTitle} />
-        <h1>Trivia Game</h1>
+      <div className="cont-title-menu">
+        <div className="cont-title">
+          <img src={iconTitle} />
+          <h1>Trivia Game</h1>
+        </div>
+      <img src={!showMenu ? iconMenu : iconX} alt="" className="menu-burg-icon" onClick={()=>setShowMenu((prev)=>!prev)}/>
       </div>
-  
+
+
       <div className="cont-components">
         {content}
       </div>
+  
+      {
+        showMenu?
+       <div className="cont-menu">
+          <p>Your Stats</p> 
+        </div> : null
+      }
+     {/* 
+
+      AGREGAR REACT ROUTE PARA TODOS LOS COMPONENTES
+
+
+        {!showMenu ? <div className="cont-components">{content}</div> : 
+        <div className="cont-menu">
+          <p>Your Stats</p>
+          {/*React Route para redirigir a otro component 
+          </div>
+        }*/}
+    
     </div>
   );
 }
@@ -189,3 +217,11 @@ export default App;
 // Best score
 // 
 // Games played
+/*
+│ 📊 Your Stats         │
+├───────────────────────┤
+│ Games played:   12    │
+│ Best score:     9     │
+│ Last score:     7     │
+│ Average score:  6.8   │
+*/
