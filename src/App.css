@@ -57,6 +57,12 @@ body{
 h1{
   margin-left: 5px;
 }
+.h1-link{
+   text-decoration: none; /* Quita el subrayado [1] */
+    color: inherit;       /* Usa el color del texto padre [6] */
+  
+}
+
 
 input, select{
    width:95%;
@@ -90,7 +96,8 @@ input:focus, input:active {
    z-index: 2;
    color: aliceblue;
    transition: all 0.5s ease;
-   
+   padding-bottom: 8px;
+
    @media(min-width: 600px){
       width: 18%;
       height: auto;

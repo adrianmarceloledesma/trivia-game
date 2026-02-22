@@ -1,33 +1,21 @@
 
 import type { GameStat } from "../types/GameStat";
 
+
 interface YourStatsProps {
   stats: GameStat[];
 }
 
 export default function Stats({ stats }: YourStatsProps) {
-  // 5️⃣ Guardar resultados en localStorage
-  //
-  // Mostrar:
-  //
-  // Best score
-  //
-  // Games played
+
   /*
-    │ 📊 Your Stats         │
+    │  Your Stats         │
     ├───────────────────────┤
     │ Games played:   12    │
     │ Best score:     9     │
     │ Last score:     7     │
     │ Average score:  6.8   │
     
-    PARA TENER ESTOS DATOS TENGO QUE OBTENERLOS DE LA LISTA DE ARRAYS QUE VOY A CREAR
-    GAMES PLAYED LO TENGO QUE .LENGTH DE LA MATRIZ
-    
-
-
-    YA TENGO LOS DATOS AHORA TENGO QUE USAR LOCALSTORAGE PARA GUARDARLOS Y DE
-    STATS OBTENER LAS ESTADISTICAS MEDIANTE METODOS
     
     */
   
@@ -46,7 +34,7 @@ export default function Stats({ stats }: YourStatsProps) {
   // let totalScore = stats.reduce((acc, stat) => acc + stat.score, 0);
 
   let averageScore =  gamesPlayed>0 ? sumScores/gamesPlayed : 0;
-
+ //AHORA TENDRIA QUE ESTILIZAR ESTE COMPONENTE
   return (
     <div>
       <h3>My stats</h3>

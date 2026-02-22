@@ -195,7 +195,12 @@ function App() {
       <div className="cont-title-menu">
         <div className="cont-title">
           <img src={iconTitle} />
-          <h1>Trivia Game</h1>
+          <Link
+            className="h1-link"
+            to="/"
+            onClick={() => setShowMenu((prev) => !prev)}
+          > <h1>Trivia Game</h1></Link>
+         
         </div>
         <img
           src={!showMenu ? iconMenu : iconX}
@@ -219,7 +224,7 @@ function App() {
             onClick={() => setShowMenu((prev) => !prev)}
             className="link"
           >
-            Your stats
+            My stats
           </Link>
         </div>
       )}
