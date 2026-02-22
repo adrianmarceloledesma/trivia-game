@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import type { Question } from "./types/Question";
 import QuestionCard from "./components/QuestionCard";
@@ -6,9 +7,11 @@ import type { UserAnswer } from "./types/UserAnswer";
 import FormOptions from "./components/FormOptions";
 import fetchTrivia from "./hooks/fetchTrivia";
 import Finished from "./components/Finished";
-import iconTitle from './icon-title.png'
-import iconMenu from './images/menu-icon.png'
-import iconX from './images/x.png'
+import iconTitle from "./icon-title.png";
+import iconMenu from "./images/menu-icon.png";
+import iconX from "./images/x.png";
+import YourStats from "./components/YourStats";
+import type { GameStat } from "./types/GameStat";
 
 function App() {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -35,8 +38,8 @@ function App() {
     setUserOptions((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,8 +48,8 @@ function App() {
 
     try {
       const handleFetch = await fetchTrivia(
-      userOptions.category,
-      userOptions.difficulty,
+        userOptions.category,
+        userOptions.difficulty,
       );
       setQuestions(handleFetch);
       console.log(userOptions);
@@ -58,12 +61,10 @@ function App() {
       setInitiateTimer(true);
       setTime(15);
       setChangeSettings(false);
-      
     } catch (error) {
-      
       setError(true);
-    } finally{
-      setLoading(false); 
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -79,7 +80,6 @@ function App() {
     //blocked mulitple answers because during 3 seconds userAnsweredQuestion is +1
     if (userAnsweredQuestion == currentQuestionIndex) {
       const isCorrect = userAnswer == correct_answer ? true : false;
-      
 
       setUserAnswers((prev) => [
         ...prev,
@@ -119,9 +119,6 @@ function App() {
     }
   }, [time, initiateTimer, currentQuestionIndex]);
 
-
-
-
   //condicional render
   let content;
   if (loading) {
@@ -130,7 +127,6 @@ function App() {
     content = (
       <>
         <p>Error! Try again</p>
-        
       </>
     );
   } else if (!finished && questions.length > 0) {
@@ -146,14 +142,11 @@ function App() {
           userAnswers={userAnswers}
           time={time}
         />
-      ) : null
+      ) : null,
     );
   } else if (!finished || changeSettings) {
     content = (
-      <FormOptions
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
-      />
+      <FormOptions handleSubmit={handleSubmit} handleChange={handleChange} />
     );
   } else if (finished && !changeSettings) {
     content = (
@@ -165,8 +158,36 @@ function App() {
     );
   }
 
+  //STATS & LOCALSTORAGE
+  const [stats, setStats] = useState<GameStat[]>([]);
+
+  //  Load once
+  //Es literalmente la forma estándar de persistencia simple en frontend
+  useEffect(() => {
+    const saved = localStorage.getItem("stats");
+    if (saved) {
+      setStats(JSON.parse(saved));
+    }
+  }, []);
+
+  const [stat, setStat] = useState<GameStat | null>(null);
 
 
+  useEffect(() => {
+    if (finished && !changeSettings) {
+      setStat({date: new Date().toDateString(),score: points})
+    }
+  }, [finished, changeSettings]);
+
+  useEffect(()=>{
+    if (!stat) return;
+    
+    setStats(prev => {
+      const updated = [...prev, stat];
+      localStorage.setItem("stats", JSON.stringify(updated));
+      return updated;
+    });
+  },[stat])
 
 
   return (
@@ -176,52 +197,42 @@ function App() {
           <img src={iconTitle} />
           <h1>Trivia Game</h1>
         </div>
-      <img src={!showMenu ? iconMenu : iconX} alt="" className="menu-burg-icon" onClick={()=>setShowMenu((prev)=>!prev)}/>
+        <img
+          src={!showMenu ? iconMenu : iconX}
+          alt=""
+          className="menu-burg-icon"
+          onClick={() => setShowMenu((prev) => !prev)}
+        />
       </div>
 
-
-      <div className="cont-components">
-        {content}
-      </div>
-  
-      {
-        showMenu?
-       <div className="cont-menu">
-          <p>Your Stats</p> 
-        </div> : null
-      }
-     {/* 
-
-      AGREGAR REACT ROUTE PARA TODOS LOS COMPONENTES
-
-
-        {!showMenu ? <div className="cont-components">{content}</div> : 
+      {showMenu && (
         <div className="cont-menu">
-          <p>Your Stats</p>
-          {/*React Route para redirigir a otro component 
-          </div>
-        }*/}
-    
+          <Link
+            to="/"
+            onClick={() => setShowMenu((prev) => !prev)}
+            className="link"
+          >
+            Home
+          </Link>
+          <Link
+            to="/stats"
+            onClick={() => setShowMenu((prev) => !prev)}
+            className="link"
+          >
+            Your stats
+          </Link>
+        </div>
+      )}
+
+      <Routes>
+        <Route
+          path="/"
+          element={<div className="cont-components">{content}</div>}
+        />
+        <Route path="/stats" element={<YourStats stats={stats} />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
-
-
-
-// 5️⃣ Guardar resultados en localStorage
-// 
-// Mostrar:
-// 
-// Best score
-// 
-// Games played
-/*
-│ 📊 Your Stats         │
-├───────────────────────┤
-│ Games played:   12    │
-│ Best score:     9     │
-│ Last score:     7     │
-│ Average score:  6.8   │
-*/
