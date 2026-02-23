@@ -4,7 +4,7 @@ Trivia game application built with React and TypeScript.
 
 The app allows users to configure the quiz (category and difficulty), answer timed questions, track their score in real time, and see the final result at the end of the game.
 
-Questions are fetched from a public trivia API and the game includes a countdown timer for each question.
+Questions are fetched from a public trivia API and the game includes a countdown timer for each question. Game statistics are persisted using localStorage.
 
 ---
 
@@ -16,6 +16,8 @@ Questions are fetched from a public trivia API and the game includes a countdown
 - Countdown timer per question
 - Score tracking
 - Final results screen
+- Persistent statistics (localStorage)
+- Games played, best score, last score, average score
 - Loading and error states
 - Clean and modular component structure
 - Responsive layout
@@ -30,6 +32,7 @@ Questions are fetched from a public trivia API and the game includes a countdown
 - Conditional rendering
 - CSS3 (Flexbox)
 - External REST API
+- Browser localStorage
 
 ---
 
@@ -48,19 +51,24 @@ https://trivia-game2026-kohl.vercel.app/
 
 ## Preview
 
+![alt text](image.png)
+
 ## Project Structure
 
 ```
+Project Structure
 src/
 ├─ components/
-│  ├─ QuestionCard.tsx
-│  ├─ FormOptions.tsx
-│  └─ Finished.tsx
+│ ├─ QuestionCard.tsx
+│ ├─ FormOptions.tsx
+│ ├─ Finished.tsx
+│ └─ MyStats.tsx
 ├─ hooks/
-│  └─ fetchTrivia.ts
+│ └─ fetchTrivia.ts
 ├─ types/
-│  ├─ Question.ts
-│  └─ UserAnswer.ts
+│ ├─ Question.ts
+│ ├─ UserAnswer.ts
+│ └─ GameStat.ts
 ├─ App.tsx
 └─ main.tsx
 ```
