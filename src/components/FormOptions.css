@@ -14,13 +14,15 @@
 }
 .cont-formOptions select{
     background-color: aliceblue;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.139);
 }
 
 .cont-formOptions input{
     background-color: rgb(107, 107, 202);
     font-weight: bold;
     color: white;
-    border:rgb(107, 107, 202) 2px solid;
+    border:rgb(107, 107, 202) 1px solid;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.135);
 }
 
 .cont-formOptions input:hover{

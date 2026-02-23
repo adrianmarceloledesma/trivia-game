@@ -1,0 +1,53 @@
+.cont-stats{
+    width: 95%;
+    margin: auto;
+}
+h3{
+    text-align: center;
+}
+
+.cont-scores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around ;
+    flex-wrap: wrap;
+}
+.cont-scores > div{
+    border: 1px solid  rgb(143, 199, 248);;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    text-align:center;
+    width: 80%;
+    margin: 10px;
+    background-color: white;
+
+    @media(min-width: 400px){
+        width: 40%;
+    }
+    @media(min-width: 800px){
+        width: 20%;
+    }
+}
+.cont-scores img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+.cont-scores>div>div{
+    display: flex;
+    justify-content: center;
+    
+}
+.cont-scores > div > div > p{
+    margin-left:10px;
+    
+}
+.cont-scores > div > div > p > p{
+    font-size: 20px; 
+}
+.score-number{
+    font-size: 25px;
+    font-weight: bold;
+    color: green;
+}
