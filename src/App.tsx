@@ -198,7 +198,7 @@ function App() {
           <Link
             className="h1-link"
             to="/"
-            onClick={() => setShowMenu((prev) => !prev)}
+            onClick={() => setShowMenu(false)}
           > <h1>Trivia Game</h1></Link>
          
         </div>

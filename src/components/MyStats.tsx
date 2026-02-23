@@ -35,16 +35,16 @@ export default function Stats({ stats }: YourStatsProps) {
   // let totalScore = stats.reduce((acc, stat) => acc + stat.score, 0);
 
   let averageScore =  gamesPlayed>0 ? sumScores/gamesPlayed : 0;
- //AHORA TENDRIA QUE ESTILIZAR ESTE COMPONENTE
+ 
   return (
     <div className="cont-components">
       <h3>My stats</h3>
       {stats.length > 0
         ? <div>
-              <p>Games played: {stats.length}</p>
-              <p>Best score: {bestScore}</p>
-              <p>Last score: {lastScore}</p>
-              <p>Average score: {averageScore}</p>
+              <p><strong>Games played:</strong> {stats.length}</p>
+              <p><strong>Best score:</strong> {bestScore}</p>
+              <p><strong>Last score:</strong> {lastScore}</p>
+              <p><strong>Average score:</strong> {averageScore}</p>
             </div>
        
         : <p>No scores yet</p>
@@ -54,3 +54,4 @@ export default function Stats({ stats }: YourStatsProps) {
     </div>
   );
 }
+
