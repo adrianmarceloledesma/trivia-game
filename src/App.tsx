@@ -10,7 +10,7 @@ import Finished from "./components/Finished";
 import iconTitle from "./icon-title.png";
 import iconMenu from "./images/menu-icon.png";
 import iconX from "./images/x.png";
-import YourStats from "./components/YourStats";
+import YourStats from "./components/MyStats";
 import type { GameStat } from "./types/GameStat";
 
 function App() {

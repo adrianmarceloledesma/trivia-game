@@ -1,6 +1,7 @@
 
 import type { GameStat } from "../types/GameStat";
 
+import '../App.css'
 
 interface YourStatsProps {
   stats: GameStat[];
@@ -36,7 +37,7 @@ export default function Stats({ stats }: YourStatsProps) {
   let averageScore =  gamesPlayed>0 ? sumScores/gamesPlayed : 0;
  //AHORA TENDRIA QUE ESTILIZAR ESTE COMPONENTE
   return (
-    <div>
+    <div className="cont-components">
       <h3>My stats</h3>
       {stats.length > 0
         ? <div>
