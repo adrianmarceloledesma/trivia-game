@@ -65,7 +65,7 @@ h1{
 }
 
 
-input, select{
+input, select, button{
    width:95%;
    padding: 10px;
    border: 2px solid rgb(146, 204, 255);

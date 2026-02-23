@@ -43,11 +43,12 @@ export default function QuestionCard({e,index,adaptedAnswers,handleAnswer,userAn
             }
 
             return (
-              <input key={option} type="button" value={option} className={optionClass} onClick={() =>
-                  handleAnswer(option, index, e.correctAnswer)
-                }
-                disabled={userAnswerForThisQuestion ? true : false} //desabilita que se pueda volver a hacer click
-              />
+              <button
+                key={option}
+                className={optionClass}
+                onClick={() => handleAnswer(option, index, e.correctAnswer)}
+                disabled={!!userAnswerForThisQuestion}//desabilita que se pueda volver a hacer click
+              >{option}</button>
             );
           })}
         </div>

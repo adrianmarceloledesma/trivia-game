@@ -72,7 +72,7 @@ export default function Stats({ stats }: YourStatsProps) {
           </div>
         </div>
       ) : (
-        <p>No scores yet</p>
+        <p className="no-scores">No scores yet</p>
       )}
     </div>
   );
