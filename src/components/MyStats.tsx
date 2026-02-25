@@ -35,7 +35,7 @@ export default function Stats({ stats }: YourStatsProps) {
   }, 0);
   // let totalScore = stats.reduce((acc, stat) => acc + stat.score, 0);
 
-  let averageScore = gamesPlayed > 0 ? sumScores / gamesPlayed : 0;
+  let averageScore = gamesPlayed > 0 ? Math.round( sumScores / gamesPlayed) : 0
 
   return (
     <div className="cont-stats">
