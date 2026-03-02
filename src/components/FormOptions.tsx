@@ -13,6 +13,7 @@ export default function FormOptions({
   return (
     <div >
       <form className="cont-formOptions" onSubmit={handleSubmit}>
+        <p className="home-subtitle">10 preguntas rápidas · 15 segundos por ronda</p>
         <div>
           <label><strong>Category:</strong> </label> <br/>
           <select name="category" id="category" onChange={handleChange}>
