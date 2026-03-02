@@ -194,7 +194,7 @@ function App() {
     <div className="container">
       <div className="cont-title-menu">
         <div className="cont-title">
-          <img src={iconTitle} />
+          <img src={iconTitle} alt="Trivia Game logo" />
           <Link
             className="h1-link"
             to="/"
@@ -202,26 +202,34 @@ function App() {
           > <h1>Trivia Game</h1></Link>
          
         </div>
-        <img
-          src={!showMenu ? iconMenu : iconX}
-          alt=""
-          className="menu-burg-icon"
+        <button
+          type="button"
+          className="menu-burg-btn"
           onClick={() => setShowMenu((prev) => !prev)}
-        />
+          aria-label={showMenu ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={showMenu}
+          aria-controls="main-menu"
+        >
+          <img
+            src={!showMenu ? iconMenu : iconX}
+            alt=""
+            className="menu-burg-icon"
+          />
+        </button>
       </div>
 
       {showMenu && (
-        <div className="cont-menu">
+        <div className="cont-menu" id="main-menu">
           <Link
             to="/"
-            onClick={() => setShowMenu((prev) => !prev)}
+            onClick={() => setShowMenu(false)}
             className="link"
           >
             Home
           </Link>
           <Link
             to="/stats"
-            onClick={() => setShowMenu((prev) => !prev)}
+            onClick={() => setShowMenu(false)}
             className="link"
           >
             My stats
