@@ -1,9 +1,18 @@
+.cont-questionCard{
+    font-size: 14px;
+    @media screen and (min-width: 500px) {
+        font-size: 17px;
+    }
+}
+
+
 .cont-questionCard .cont-time-index-points{
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid #c9a66b;
     padding-bottom: 12px;
     margin-bottom: 16px;
+    
 }
 .cont-title-options{
    text-align: center;
@@ -12,15 +21,16 @@
 .cont-title-options h2{
    color: #5d4e37;
    font-weight: 600;
-   font-size: 20px;
+   
    line-height: 1.5;
 }
 .cont-questionCard .cont-time-index-points .time{
     border-radius: 20px;
-    padding: 6px 14px;
+    padding: 3px 10px;
     background: #c9a66b;
     border: none;
     font-weight: 600;
+    font-size: 16px;
     color: #3d3428;
     box-shadow: 0 4px 12px rgba(201, 166, 107, 0.3);
 }
@@ -58,4 +68,12 @@
     border-color: #a0522d !important;
     color: white !important;
     box-shadow: 0 4px 16px rgba(205, 133, 63, 0.4) !important;
+}
+
+@media (min-width: 500px){
+
+    .cont-questionCard .cont-time-index-points .time{
+        font-size: 14px;
+        padding: 4px 12px;
+    }
 }
