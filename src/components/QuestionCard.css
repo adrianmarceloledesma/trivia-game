@@ -1,18 +1,28 @@
 .cont-questionCard .cont-time-index-points{
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid rgb(146, 204, 255);
+    border-bottom: 2px solid #c9a66b;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
 }
 .cont-title-options{
    text-align: center;
-   
+   margin-bottom: 20px;
+}
+.cont-title-options h2{
+   color: #5d4e37;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 1.5;
 }
 .cont-questionCard .cont-time-index-points .time{
     border-radius: 20px;
-    padding: 5px 10px;
-    background-color: aliceblue;
-    border: 1px solid;
-    
+    padding: 6px 14px;
+    background: #c9a66b;
+    border: none;
+    font-weight: 600;
+    color: #3d3428;
+    box-shadow: 0 4px 12px rgba(201, 166, 107, 0.3);
 }
 .cont-options{
     display: flex;
@@ -21,23 +31,31 @@
 }
 .cont-options button{
     margin: 10px 0;
-    font-weight: bold;
-    background: aliceblue;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
+    font-weight: 600;
+    background: #fdf8f0;
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.1);
+    transition: all 0.3s ease;
+    color: #3d3428;
+    border: 2px solid #c9a66b;
 }
 
 .cont-options button:hover{
-    border: rgb(0, 133, 249) 2px solid;
+    border: #8b5a2b 2px solid;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 90, 43, 0.2);
 }
 .cont-options button:focus, .cont-options button:active{
-    transform: scale(2);
+    transform: scale(1.02);
 }
 .option-correct{
-    color: green;
-    border-color: green;
+    background: #8fbc8f !important;
+    border-color: #6b8e6b !important;
+    color: #3d3428 !important;
+    box-shadow: 0 4px 16px rgba(143, 188, 143, 0.4) !important;
 }
 .option-incorrect{
-    color: red;
-    border-color: red;
+    background: #cd853f !important;
+    border-color: #a0522d !important;
+    color: white !important;
+    box-shadow: 0 4px 16px rgba(205, 133, 63, 0.4) !important;
 }

@@ -3,23 +3,39 @@
 }
 .cont-finished img{
     width: 150px;
-    @media (min-width: 700px) {
+    filter: drop-shadow(0 8px 24px rgba(139, 90, 43, 0.2));
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+@media (min-width: 700px) {
+    .cont-finished img{
       width: 250px;
     }
 }
 .cont-finished input{
     margin: 10px 0;
-    font-weight: bold;
-    background-color: aliceblue;
+    font-weight: 600;
+    background: #8b5a2b;
+    color: #fffcf5;
+    border: none;
+    transition: all 0.3s ease;
 }
 .cont-finished input:hover{
-    background-color:rgb(107, 107, 202) ;
+    background: #a0522d;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 90, 43, 0.4);
 }
 .welldone{
-    color: rgb(214, 214, 73);
-    font-size: 25px;
-    font-weight: bold;
+    background: linear-gradient(90deg, #cd853f 0%, #8b5a2b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 

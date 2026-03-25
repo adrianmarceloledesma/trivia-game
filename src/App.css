@@ -1,35 +1,19 @@
-/*Acá va:
-. Centrado
-. Fondo
-. Card principal
-. Layout general*/
-
-*{
-   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   
-}
-
 .container{
    font-size: 18px;
    margin: auto;
    overflow-wrap: break-word;
-   
-}
-body{
-   margin: auto;
-   background-color: rgb(223, 238, 250);
-
 }
 .cont-components{
    margin: auto;
-   width: 90%;
+   width: 95%;
    margin-top: 20px;
-   background-color: #ffffff; 
-   padding: 20px;
-   border-radius: 8px;
-   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+   background: #e7d7b4;
+   padding: 16px;
+   border-radius: 16px;
+   box-shadow: 0 8px 32px rgba(139, 90, 43, 0.15);
    @media(min-width: 400px){
      width: 80%;
+     padding: 24px;
    }
    @media(min-width: 600px){
       width: 60%;
@@ -37,18 +21,16 @@ body{
    @media(min-width: 900px){
       width: 50%;
     }
-    
 }
 
 .cont-title-menu{
    display: flex;
-   color: rgb(146, 204, 255);
-   background-color: rgb(23, 43, 98);
+   background: linear-gradient(90deg, #e7d7b4 0%, #e7cc92 100%);
    justify-content:space-around;
-   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.201);
+   box-shadow: 0 4px 16px rgba(139, 90, 43, 0.1);
    position: relative;
    z-index: 3;
-  
+   padding: 0px 0;
 }
 
 .cont-title{
@@ -57,14 +39,29 @@ body{
    align-items: center;
 }
 .cont-title img{
-   width: 40px;
+   width: 28px;
 }
+@media(min-width: 400px){
+  .cont-title img{
+    width: 36px;
+  }
+}
+
 h1{
-  margin-left: 5px;
+  margin-left: 6px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  color: #8b5a2b;
+}
+@media(min-width: 400px){
+  h1{
+    font-size: 24px;
+  }
 }
 .h1-link{
    text-decoration: none; /* Quita el subrayado [1] */
-    color: inherit;       /* Usa el color del texto padre [6] */
+   color: inherit;       /* Usa el color del texto padre [6] */
   
 }
 
@@ -72,19 +69,28 @@ h1{
 input, select, button{
    width:95%;
    padding: 10px;
-   border: 2px solid rgb(146, 204, 255);
-   border-radius: 8px;
-   font-size: 18px;
+   border: 2px solid #c9a66b;
+   border-radius: 12px;
+   font-size: 14px;
    cursor: pointer;
    overflow-wrap: break-word;
    word-wrap: break-word;
-   transition: all 0.5s ease;
-   
+   transition: all 0.3s ease;
    box-sizing: border-box;
+   background-color: #fffcf5;
+   color: #3d3428;
+}
+@media(min-width: 400px){
+  input, select, button{
+    padding: 12px;
+    font-size: 16px;
+  }
 }
 
-input:focus, input:active {
-  transform: scale(1.1);
+input:focus, select:focus {
+  outline: none;
+   border-color: #8b5a2b;
+   box-shadow: 0 0 12px rgba(139, 90, 43, 0.2);
 }
 
 .cont-menu{
@@ -92,42 +98,45 @@ input:focus, input:active {
    flex-direction: column;
    align-items: center;
    position: absolute;
-   top:90px;
+   top:54px;
    right: 0;
    width: 100%;
    height: 70%;
-   background-color: rgb(23, 43, 98);
-   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.356);
-
+   background: #e7d7b4;
+   box-shadow: 0 8px 24px rgba(139, 90, 43, 0.15);
    z-index: 2;
-   color: aliceblue;
-   transition: all 0.5s ease;
-   padding-bottom: 8px;
+   color: #3d3428;
+   transition: all 0.3s ease;
+   
+   border-radius: 0 0 0 16px;
 
-   @media(min-width: 600px){
+   @media(min-width: 900px){
       width: 18%;
       height: auto;
     }
 }
 .cont-menu .link{
-   transition: all 0.5s ease;
+   transition: all 0.3s ease;
    cursor: pointer;
-   color: aliceblue;
+   color: #8b5a2b;
    text-decoration: none;
-   margin-top:10px;
-   font-size: 20px;
+   margin-top:20px;
+   font-size: 18px;
+   padding: 10px 16px;
+   border-radius: 8px;
 }
 
-.cont-menu .link:active {
-  transform: scale(1.5);
+.cont-menu .link:hover {
+  background-color: rgba(139, 90, 43, 0.1);
+  color: #a0522d;
 }
 .menu-burg-icon{
-   width: 25px;
-   height: 35px;
-   align-self:center;
-   margin-bottom: -4px;
-   transition: all 0.5s ease;
-   cursor: pointer;
+    width: 25px;
+    height: 35px;
+    align-self:center;
+    margin-bottom: -4px;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 
 .menu-burg-icon:focus, .menu-burg-icon:active {

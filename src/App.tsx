@@ -122,11 +122,11 @@ function App() {
   //condicional render
   let content;
   if (loading) {
-    content = <p>Loading...</p>;
+    content = <p style={{textAlign: 'center', color: '#8b5a2b'}}>Loading...</p>;
   } else if (error) {
     content = (
       <>
-        <p>Error! Try again</p>
+        <p style={{textAlign: 'center', color: '#cd853f', fontWeight: 600}}>Error! Try again</p>
       </>
     );
   } else if (!finished && questions.length > 0) {
