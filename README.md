@@ -51,7 +51,7 @@ https://trivia-game2026-kohl.vercel.app/
 
 ## Preview
 
-![alt text](image.png)
+![alt text](preview.png)
 
 ## Project Structure
 
